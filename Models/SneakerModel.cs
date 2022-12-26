@@ -5,6 +5,8 @@ namespace PrototypProjekta.Models
 {
 
     //Tabela - Klassa
+
+    //Adnotacja/walidacja(Podstawowa)
     [Table("Sneaker")]
     public class SneakerModel
     {
@@ -14,11 +16,14 @@ namespace PrototypProjekta.Models
         public int Id { get; set; }
 
 
-        //Adnotacja/walidacja
+        //Adnotacja/walidacja(Podstawowa)
         [Column("Company name")]
+
+        //Adnotacja/walidacja
         [Required(ErrorMessage = "Podaj nazwe firmy!")]
         [MaxLength(50,ErrorMessage = "Zadługi tekst! W formularze, może wmieścić się do 50 symbolów.")]
         [MinLength(0,ErrorMessage = "Zakrutki tekst! Musisz wpisać nazwe firmy butów.")]
+        //wierszy/kolumny - pola
         public string CompanyName { get; set; }
 
 
@@ -37,3 +42,4 @@ namespace PrototypProjekta.Models
 
     }
 }
+

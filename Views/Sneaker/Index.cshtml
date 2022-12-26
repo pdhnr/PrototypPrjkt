@@ -1,12 +1,25 @@
-﻿@model List<PrototypProjekta.Models.SneakerModel>
+﻿<!-- (Małpka)model Razor.models.SneakerModel - deklaracja importu modelu w Widok  -->
+<!--
+    Czyli (Małpka)model  -  tak zwany mostek miedzy modelem i widokiem, a dokłądniej c sharpem i html.
+-->
+@model List<PrototypProjekta.Models.SneakerModel>
+
+
+    <!-- 
+        Układ - zadaniem układu jest definiowanie powtarzalnych kompozycji widoków
+    -->
+
 
 <p class="text-center">
     <a asp-controller="Sneaker" asp-action="Add" class="btn btn-primary btn-lg">Dodaj</a>
 </p>
 <table class="table">
+
+    <!-- iteracja - Jawna   -->
     @foreach (var eS in Model)
     {
         <tr>
+            <!-- zostanie umieszczone w układzie --> 
             <td>@eS.CompanyName</td>
             <td>@eS.ModelName</td>
             <!-- <td>  <div class="border border-success text-success" style="text-align:center;border-radius: 10px; margin: 5px;"> element. </div>  </td> -->

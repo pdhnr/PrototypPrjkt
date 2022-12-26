@@ -37,12 +37,32 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-app.UseRouting();
+app.UseRouting(); //ta komenda zeby włączyc Routing 
 
 app.UseAuthorization();
 
+
+/*
+Routing / Trasowanie / Маршутизація - wążanie odpowiedniej sciezki z metodą akcji
+(np. link; localhost: 3000 / produkt / opis / laptop.html)
+*/
+//formatowanie - endpointów 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+/*
+ Obowązkowo musi być w URL:  ... /Controller/Metoda
+                             ... /Controller/Metoda/Id
+                             ... /
+
+(np.)
+
+https //Localhost:500/Home/Index
+https //Localhost:500/Home/Index/5
+https //Localhost:500/             - domyslnie jest (Home/Index)
+ */
+
+//Ale nie mozemy urzywac BEZ METODY
 
 app.Run();

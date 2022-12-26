@@ -2,7 +2,12 @@
 
 <h1>Dodawanie nowych butów</h1>
 
+<!--
+    Tag Helper (np.: asp-for= , asp-validation-for=, asp-...=, itd. ):
 
+   1 Generuje nam kod HTML.
+   2 Łącznik mędzy kodem: Kontrolerem, Modelem i kodem Widoków.
+-->
 
 <form asp-controller="Sneaker" asp-action="Add" method="post">
 
@@ -10,12 +15,12 @@
     <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
 
 
-
-    <label asp-for="CompanyName">Marka: </label>
+    <!-- Formularz -->
+    <label asp-for="CompanyName">Marka: </label> <!-- label - tworzenie formularza  -->
         <div>
             <span asp-validation-for="CompanyName" style="font-size:16px; font-family:'Times New Roman" class="text-danger"></span>
         </div>
-    <input asp-for="CompanyName" type="text" class="form-control" />
+    <input asp-for="CompanyName" type="text" class="form-control" />  <!-- input - wpisywanie w formularz  -->
 
 
 

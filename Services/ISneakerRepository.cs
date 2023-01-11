@@ -10,6 +10,12 @@ namespace PrototypProjekta.Services
 
         public bool Delete(int? id);
 
+        public int Update(SneakerModel sneakerModel);
+
+        public SneakerModel? FindBy(int? id);
+
+        public void ChangeCategorySneaker(CategoryModel categoryModel, int? id);
+
         public ICollection<SneakerModel> FindAll();
     }
 }

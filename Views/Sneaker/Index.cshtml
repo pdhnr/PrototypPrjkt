@@ -15,6 +15,19 @@
 </p>
 <table class="table">
 
+
+    <!-- -->
+    <table class="table">
+       <tr>
+           <th>Marka</th>
+           <th>Model</th>
+           <th>Cena</th>
+           <th>Rodzaj</th>
+           <th>Akcje</th>
+       </tr>
+        <!-- -->
+
+
     <!-- iteracja - Jawna   -->
     @foreach (var eS in Model)
     {
@@ -24,6 +37,20 @@
             <td>@eS.ModelName</td>
             <!-- <td>  <div class="border border-success text-success" style="text-align:center;border-radius: 10px; margin: 5px;"> element. </div>  </td> -->
             <td>@eS.Price</td>
+                @if (@eS.CategoryModel is null)
+                {
+                    <td>-</td>
+                }
+                else
+                {
+                    <td>@eS.CategoryModel.CategoryName</td>
+                }
+
+
+                <td>
+                    <a asp-controller="Sneaker" asp-action="Delete" asp-route-id=@eS.SneakerModelId class="btn btn-danger">Usuń</a>
+                    <a asp-controller="Sneaker" asp-action="ChangeCategorySneaker" asp-route-id=@eS.SneakerModelId class="btn btn-primary">Określ rodzaj</a>
+                </td>
         </tr>
     }
 </table>

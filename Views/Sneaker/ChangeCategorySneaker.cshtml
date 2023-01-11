@@ -1,0 +1,21 @@
+﻿@model PrototypProjekta.Models.CategoryModel
+
+<h1>Określenie rodzaju</h1>
+
+<form asp-controller="Sneaker" asp-action="ChangeCategorySneaker" method="post">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
+
+
+
+    <label asp-for="CategoryName">Rodzaj: </label>
+        <div>
+            <span asp-validation-for="CategoryName" style="font-size:16px; font-family:'Times New Roman" class="text-danger"></span>
+        </div>
+    <input asp-for="CategoryName" type="text" class="form-control" />
+
+
+    <input asp-for="SneakerModelId" type="number" value="@ViewBag.sneakerModelId" class="form-control" hidden />
+
+    <button type="submit" class="btn btn-success">Zmień</button>
+</form>

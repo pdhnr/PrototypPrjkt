@@ -11,6 +11,8 @@ builder.Services.AddControllersWithViews();
 
 
 
+////////////////////////////////////////////////////////////////////////////////
+
 //to my musieliśmy dodać
 
 builder.Services.AddDbContext<AppDbContext>(
@@ -18,6 +20,7 @@ options => options.UseSqlServer(builder.Configuration["Data:Connection"]));
 
 builder.Services.AddScoped<ISneakerRepository, EFSneakerRepository>();
 
+////////////////////////////////////////////////////////////////////////////////
 
 
 

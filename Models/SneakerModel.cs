@@ -13,7 +13,7 @@ namespace PrototypProjekta.Models
 
         //Obijekt(Pola) - Wiersz 
         [Key]
-        public int Id { get; set; }
+        public int SneakerModelId { get; set; } //Klucz Glowny
 
 
         //Adnotacja/walidacja(Podstawowa)
@@ -39,6 +39,18 @@ namespace PrototypProjekta.Models
         [Required(ErrorMessage = "Proszę podać cenę butów!")]
         [Range(0, 1000000, ErrorMessage = "Proszę podać cenę butów, 0 - 1 000 000!")]
         public double Price { get; set; }
+
+
+        ////////////////////////////////////////////////////////////////////////////
+        //Nawigatory:
+
+
+
+        //sneakers jeden - do - jeden category
+
+        [Column("Sneakers category ")]
+        public CategoryModel? CategoryModel { get; set; } //Nawigator CategoryModel.
+
 
     }
 }
